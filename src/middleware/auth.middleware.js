@@ -4,10 +4,11 @@ async function auth(req,res,next){
 
     const token = req.cookies.token ;
 
-    if(!token){
+    if (!token) {
         return res.status(401).json({
-            message:"Unauthorized"
-        })
+            message: "Unauthorized",
+            status: 401
+        });
     }
     
     next() ;
